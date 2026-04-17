@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍝 Симметричный кускус</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🍝 Симметричный кускус 🍚</h1>
+        <p class="subtitle">Магическая сортировка на грани абсурда и красоты</p>
+        
+        <div class="input-section">
+            <label>Введите массив чисел (через запятую):</label>
+            <input type="text" id="arrayInput" value="1,2,3,4,5,6,7,8">
+            
+            <label>Выберите алгоритм:</label>
+            <select id="algorithm">
+                <option value="symmetrical">Симметричный</option>
+                <option value="chaotic">Хаотичный</option>
+                <option value="golden">Золотой</option>
+                <option value="fractal">Фрактальный</option>
+                <option value="spiral">Спиральный</option>
+            </select>
+            
+            <button onclick="processCouscous()">🍝 Приготовить кускус!</button>
+        </div>
+        
+        <div class="result-section">
+            <h3>Результат:</h3>
+            <div id="result" class="result-box"></div>
+        </div>
+        
+        <div class="animation" id="animation"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
