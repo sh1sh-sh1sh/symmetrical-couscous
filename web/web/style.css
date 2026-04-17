@@ -1,0 +1,90 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #fff8e7 0%, #ffe4b5 100%);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #d2691e;
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+input, select {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #d2691e;
+    border-radius: 10px;
+    outline: none;
+}
+
+button {
+    background: #d2691e;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #b85c14;
+}
+
+.result-section {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f5f5dc;
+    border-radius: 10px;
+}
+
+.result-box {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2e8b57;
+    word-wrap: break-word;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.animation {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+}
