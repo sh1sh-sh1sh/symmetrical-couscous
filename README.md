@@ -23,6 +23,7 @@
 git clone https://github.com/sh1sh-sh1sh/symmetrical-couscous.git
 
 # Перейдите в папку проекта
+
 cd symmetrical-couscous
 
 # Запустите программу
