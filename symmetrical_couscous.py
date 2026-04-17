@@ -1,44 +1,115 @@
+"""
+🍝 Symmetrical Couscous - Расширенная версия
+Алгоритмический эксперимент на грани абсурда и красоты
+"""
+
+import random
+import math
+
 def symmetrical_couscous(arr):
     """
-    Превращает массив в симметрично-кускусную форму.
-    
-    Алгоритм зеркально отражает элементы с плавающим шагом,
-    создавая уникальную "кускусную" симметрию.
-    
-    Параметры:
-    arr (list): Входной массив чисел
-    
-    Возвращает:
-    list: Симметрично-кускусный массив
+    Классический симметрично-кускусный алгоритм.
+    Зеркально отражает элементы с плавающим шагом.
     """
     n = len(arr)
     mid = n // 2
     result = arr[:]
     
     for i in range(mid):
-        # Симметричный обмен с лёгкой "кускусной деформацией"
         if i % 2 == 0:
             result[i], result[n - 1 - i] = result[n - 1 - i], result[i]
     
     return result
 
 
-def visualize_couscous(arr):
-    """Визуализирует процесс преобразования"""
-    print("🍝 Исходный массив:", arr)
-    print("🪞 Симметрично-кускусный:", symmetrical_couscous(arr))
-    print("-" * 40)
+def chaotic_couscous(arr):
+    """
+    🌪️ Хаотичный кускус - случайные перестановки
+    Каждая крупинка ищет своё хаотичное место
+    """
+    result = arr[:]
+    random.shuffle(result)
+    return result
+
+
+def golden_couscous(arr):
+    """
+    ✨ Золотой кускус - на основе золотого сечения (φ = 1.618)
+    Математически совершенная перестановка
+    """
+    if not arr:
+        return arr
+    
+    n = len(arr)
+    golden_ratio = (1 + math.sqrt(5)) / 2
+    result = [0] * n
+    
+    for i in range(n):
+        new_index = int((i * golden_ratio) % n)
+        result[new_index] = arr[i]
+    
+    return result
+
+
+def fractal_couscous(arr):
+    """
+    🧬 Фрактальный кускус - рекурсивная симметрия
+    Кускус внутри кускуса внутри кускуса...
+    """
+    if len(arr) <= 1:
+        return arr
+    
+    mid = len(arr) // 2
+    left = fractal_couscous(arr[:mid])
+    right = fractal_couscous(arr[mid:])[::-1]
+    
+    return left + right
+
+
+def spiral_couscous(arr):
+    """
+    🐌 Спиральный кускус - закручивает массив по спирали
+    """
+    if not arr:
+        return arr
+    
+    result = []
+    left, right = 0, len(arr) - 1
+    
+    while left <= right:
+        if left == right:
+            result.append(arr[left])
+            break
+        result.append(arr[right])
+        result.append(arr[left])
+        left += 1
+        right -= 1
+    
+    return result
+
+
+def visualize_couscous(arr, algorithm=symmetrical_couscous, name="Классический"):
+    """Визуализирует работу любого алгоритма кускуса"""
+    print(f"🍝 {name} кускус:")
+    print(f"   Исходный: {arr}")
+    print(f"   Результат: {algorithm(arr)}")
+    print("-" * 50)
 
 
 if __name__ == "__main__":
-    # Примеры использования
-    test_arrays = [
-        [1, 2, 3, 4, 5, 6, 7, 8],
-        [10, 20, 30, 40, 50],
-        [1, 1, 2, 3, 5, 8, 13]
+    test_array = [1, 2, 3, 4, 5, 6, 7, 8]
+    
+    print("\n" + "="*50)
+    print("🍚 СИММЕТРИЧНО-КУСКУСНЫЙ КОМБАЙН 🍝")
+    print("="*50 + "\n")
+    
+    algorithms = [
+        (symmetrical_couscous, "Симметричный"),
+        (chaotic_couscous, "Хаотичный"),
+        (golden_couscous, "Золотой"),
+        (fractal_couscous, "Фрактальный"),
+        (spiral_couscous, "Спиральный")
     ]
     
-    print("🍝🍚 СИММЕТРИЧНО-КУСКУСНЫЙ АЛГОРИТМ 🍚🍝\n")
-    
-    for arr in test_arrays:
-        visualize_couscous(arr)
+    for algo, name in algorithms:
+        visualize_couscous(test_array, algo, name)
